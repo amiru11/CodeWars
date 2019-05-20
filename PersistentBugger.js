@@ -2,7 +2,7 @@
  * Write a function, persistence, that takes in a positive parameter num and returns its multiplicative persistence,
  * which is the number of times you must multiply the digits in num until you reach a single digit.
  *
- * persistence 함수를 사용해서 양의 정수의 각자리를 곱해서 한자리 수가 될 때까지 만들자.
+ * persistence 함수를 사용해서 양의 정수의 각자리를 곱해서 한자리 수가 될 때까지 만들자. 그리고 그 횟수를 구한다.
  */
 
 /**
@@ -20,10 +20,10 @@ const persistence = num => {
   while (num.toString().length > 1) {
     results++
     num = num
+      .toString()
       .split('')
       .map(Number)
       .reduce((a, b) => a * b)
-      .toString()
   }
   return results
 }
